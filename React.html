@@ -1,0 +1,64 @@
+<html>
+
+<head>
+  <title>React Lab</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+      class HelloMessage extends React.Component {
+        constructor(props) {
+          super(props);
+          this.handleClick = this.handleClick.bind(this);
+          this.state = {name: props.name};
+        }
+        handleClick(e) {
+          this.setState({ name: $('#nameInput')[0].value });
+        }
+        render() {
+          return (
+            <div>
+              <div>
+                Hello {this.state.name}
+              </div>
+              <div>
+                <input type="text" id="nameInput"></input>
+              </div>
+              <div>
+                <button onClick={this.handleClick}>
+                  Change Name
+                </button>
+              </div>
+            </div>
+          );
+        }
+      }
+      ReactDOM.render(
+        <HelloMessage name="John Taylor" id="hello" />,
+        // document.getElementById('root')
+        $('#root')[0]
+      );
+      </script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+  </script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+
+      // jquery code
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta charset="UTF-8" />
+ <title>Hello Vue</title>
+ </head>
+ <body>
+ <div id="app">
+ <h1>Welcome to my first {{ frameName }} application</h1>
+ </div>
+ <script src="https://unpkg.com/vue"></script>
+ <script>
+ const app = new Vue({
+ el: '#app',
+ data: {
+ frameName: 'Vue'
+ }
+ })
+ </script>
+</body>
+</html>
